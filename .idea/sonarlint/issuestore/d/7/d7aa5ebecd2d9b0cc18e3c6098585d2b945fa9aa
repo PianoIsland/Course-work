@@ -1,0 +1,14 @@
+
+`	java:S112u"FDefine and throw a dedicated exception instead of using a generic one.(Ä§´îøÿÿÿÿ
+m
+java:S3776u"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ä§´îøÿÿÿÿ
+?
+java:S2140y")Use "java.util.Random.nextInt()" instead.(Ö¦ðþ
+T	java:S106†"9Replace this use of System.out or System.err by a logger.(¬ÆØüûÿÿÿÿ
+T	java:S106¥"9Replace this use of System.out or System.err by a logger.(§¤†Òüÿÿÿÿ
+D
+java:S1125©"'Remove the unnecessary boolean literal.(½ƒ¾18¦ŠÖ–Œ0
+V	java:S106®"9Replace this use of System.out or System.err by a logger.(öÜÖª8«ŠÖ–Œ0
+f	java:S117y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö¦ðþ
+`
+java:S2095w"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ÌŠ“þþÿÿÿÿ
