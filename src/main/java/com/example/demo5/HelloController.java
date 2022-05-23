@@ -1,15 +1,18 @@
 package com.example.demo5;
 
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -116,30 +119,33 @@ public class HelloController {
 
     @FXML
     void initialize() {
-        List<List<TextField>> a = new ArrayList<>();
-        a.add(textfield1);
-        a.add(textfield2);
-        a.add(textfield3);
-        a.add(textfield4);
-        a.add(textfield5);
+        List<List<TextField>> CellValues = new ArrayList<>();
+        CellValues.add(textfield1);
+        CellValues.add(textfield2);
+        CellValues.add(textfield3);
+        CellValues.add(textfield4);
+        CellValues.add(textfield5);
+        TranslateTransition translate = new TranslateTransition();
+
         AtomicReference<String> prefinalWordle = new AtomicReference<>("");
-        AtomicInteger i = new AtomicInteger();
-        AtomicInteger t = new AtomicInteger();
-        AtomicInteger x = new AtomicInteger();
+
+        AtomicInteger DidYouGuessTheWord = new AtomicInteger();
         AtomicInteger j = new AtomicInteger();
-        AtomicInteger jk = new AtomicInteger();
+        AtomicBoolean ClearAllCells = new AtomicBoolean(false);
+        AtomicBoolean DoesThisWordExist = new AtomicBoolean(false);
+        AtomicBoolean GenerateNewWord = new AtomicBoolean(true);
         getData.setOnAction(event -> {
             word.setPromptText("Введите слово");
-            if (x.get() == 1){
+            if (ClearAllCells.get()){
                 for (int k = 0; k < 5; k++) {
-                    for (TextField text : a.get(j.get())) {
+                    for (TextField text : CellValues.get(j.get())) {
                         text.clear();
                         text.setStyle("");
                     }
                     j.getAndIncrement();
                 }
                 j.set(0);
-                x.set(0);
+                ClearAllCells.set(false);
             }
             getData.setText("Проверить слово");
 
@@ -157,16 +163,16 @@ public class HelloController {
                     // считываем строки в цикле
                     line = reader.readLine();
                     if (guess.equals(line)){
-                        jk.set(1);
+                        DoesThisWordExist.set(true);
                         break;
                     }
-                    jk.set(0);
+                    DoesThisWordExist.set(false);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
             int count = 0;
-            if (t.get() == 0) {
+            if (GenerateNewWord.get()) {
                 FileReader reader = null;
                 try {
                     reader = new FileReader("words.txt");
@@ -180,27 +186,28 @@ public class HelloController {
                     wordle.set(scan.nextLine());
                 }
                 prefinalWordle.set(wordle.get());
-                t.set(1);
+                GenerateNewWord.set(false);
             }
             final String finalWordle = prefinalWordle.get();
-            for (TextField text : a.get(i.get())) {
+            System.out.println(finalWordle);
+            for (TextField text : CellValues.get(DidYouGuessTheWord.get())) {
                 if (guess.length() != 5) {
                     info.setText("Должно быть 5 букв!");
-                    i.getAndDecrement();
+                    DidYouGuessTheWord.getAndDecrement();
                     break;
                 }
-                if (jk.get()==0) {
+                if (!DoesThisWordExist.get()) {
                     info.setText("Такого слова нет!");
-                    i.getAndDecrement();
+                    DidYouGuessTheWord.getAndDecrement();
                     break;
                 }
                 text.setText(String.valueOf(guess.charAt(count)));
                 if (guess.charAt(count) == finalWordle.charAt(count)) {
                     text.setStyle("-fx-background-color:#ADFF2F; -fx-border-color:#ADFF2F;");
-
                 }
                 if (guess.charAt(count) != finalWordle.charAt(count)) {
                     text.setStyle("-fx-background-color:#FFD700; -fx-border-color:#FFD700;");
+
                 }
                 if (finalWordle.indexOf(guess.charAt(count)) == -1) {
                     text.setStyle("-fx-background-color:#D3D3D3; -fx-border-color:#D3D3D3;");
@@ -208,23 +215,23 @@ public class HelloController {
                 count++;
                 info.setText("Введите слово из 5 букв:");
             }
-            i.getAndIncrement();
+            DidYouGuessTheWord.getAndIncrement();
             if (guess.equals(finalWordle)) {
                 info.setText("Вы угадали!");
                 word.setPromptText("Правильное слово: " + finalWordle);
                 getData.setText("Начать заново");
-                i.set(0);
-                t.set(0);
-                x.set(1);
+                DidYouGuessTheWord.set(0);
+                GenerateNewWord.set(true);
+                ClearAllCells.set(true);
             }
-            if (i.get() == 5) {
+            if (DidYouGuessTheWord.get() == 5) {
                 if (!guess.equals(finalWordle)){
                     info.setText("Вы проиграли!");
                     word.setPromptText("Правильное слово: " + finalWordle);
                     getData.setText("Начать заново");
-                    i.set(0);
-                    t.set(0);
-                    x.set(1);
+                    DidYouGuessTheWord.set(0);
+                    GenerateNewWord.set(true);
+                    ClearAllCells.set(true);
                 }
             }
             word.clear();
