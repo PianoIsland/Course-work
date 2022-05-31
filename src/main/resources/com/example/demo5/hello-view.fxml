@@ -10,128 +10,153 @@
 <?import java.util.ArrayList?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="502.0" style="-fx-background-color: #808080;" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo5.HelloController">
 <children>
-    <TextField fx:id="word" layoutX="78.0" layoutY="578.0" prefHeight="57.0" prefWidth="348.0" promptText="Введите слово">
+    <TextField fx:id="word" layoutX="76.0" layoutY="628.0" prefHeight="57.0" prefWidth="348.0" promptText="Введите слово">
         <font>
             <Font name="Times New Roman" size="24.0" />
         </font></TextField>
-    <Text fill="WHITE" layoutX="119.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FFFFFF;" text="KsenoWordle" wrappingWidth="264.0">
+    <Text fill="WHITE" layoutX="178.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FFFFFF;" text="Wordle" wrappingWidth="145.60000000000014">
         <font>
             <Font size="43.0" />
         </font>
     </Text>
-    <Text fx:id="info" fill="WHITE" layoutX="76.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите слово из 5 букв:" wrappingWidth="409.13671875">
+    <Text fx:id="info" fill="WHITE" layoutX="81.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите слово из 5 букв:" wrappingWidth="409.13671875">
         <font>
             <Font size="33.0" />
         </font>
     </Text>
-    <TextField fx:id="t11" layoutX="76.0" layoutY="208.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t11" layoutX="75.0" layoutY="179.0" prefHeight="70.0" prefWidth="70.0">
         <font>
             <Font size="32.0" />
         </font>
         <cursor>
             <Cursor fx:constant="DEFAULT" />
         </cursor></TextField>
-    <TextField fx:id="t21" layoutX="76.0" layoutY="278.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t21" layoutX="75.0" layoutY="249.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t31" layoutX="76.0" layoutY="348.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t31" layoutX="75.0" layoutY="319.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t41" layoutX="76.0" layoutY="418.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t41" layoutX="75.0" layoutY="389.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t51" layoutX="76.0" layoutY="488.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t51" layoutX="75.0" layoutY="459.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t12" layoutX="146.0" layoutY="208.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t12" layoutX="145.0" layoutY="179.0" prefHeight="70.0" prefWidth="70.0">
         <font>
             <Font size="32.0" />
         </font></TextField>
-    <TextField fx:id="t22" layoutX="146.0" layoutY="278.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t22" layoutX="145.0" layoutY="249.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t32" layoutX="146.0" layoutY="348.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t32" layoutX="145.0" layoutY="319.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t42" layoutX="146.0" layoutY="418.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t42" layoutX="145.0" layoutY="389.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t52" layoutX="146.0" layoutY="488.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t52" layoutX="145.0" layoutY="459.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t13" layoutX="216.0" layoutY="208.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t13" layoutX="215.0" layoutY="179.0" prefHeight="70.0" prefWidth="70.0">
         <font>
             <Font size="32.0" />
         </font></TextField>
-    <TextField fx:id="t23" layoutX="216.0" layoutY="278.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t23" layoutX="215.0" layoutY="249.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t33" layoutX="216.0" layoutY="348.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t33" layoutX="215.0" layoutY="319.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t43" layoutX="216.0" layoutY="418.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t43" layoutX="215.0" layoutY="389.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t53" layoutX="216.0" layoutY="488.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t53" layoutX="215.0" layoutY="459.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t14" layoutX="286.0" layoutY="208.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t14" layoutX="285.0" layoutY="179.0" prefHeight="70.0" prefWidth="70.0">
         <font>
             <Font size="32.0" />
         </font></TextField>
-    <TextField fx:id="t24" layoutX="286.0" layoutY="278.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t24" layoutX="285.0" layoutY="249.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t34" layoutX="286.0" layoutY="348.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t34" layoutX="285.0" layoutY="319.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t44" layoutX="286.0" layoutY="418.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t44" layoutX="285.0" layoutY="389.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t54" layoutX="286.0" layoutY="488.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t54" layoutX="285.0" layoutY="459.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t15" layoutX="356.0" layoutY="208.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t15" layoutX="355.0" layoutY="179.0" prefHeight="70.0" prefWidth="70.0">
         <font>
             <Font size="32.0" />
         </font></TextField>
-    <TextField fx:id="t25" layoutX="356.0" layoutY="278.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t25" layoutX="355.0" layoutY="249.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t35" layoutX="356.0" layoutY="348.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t35" layoutX="355.0" layoutY="319.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t45" layoutX="356.0" layoutY="418.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t45" layoutX="355.0" layoutY="389.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <TextField fx:id="t55" layoutX="356.0" layoutY="488.0" prefHeight="70.0" prefWidth="70.0">
+    <TextField fx:id="t55" layoutX="355.0" layoutY="459.0" prefHeight="70.0" prefWidth="70.0">
          <font>
             <Font size="32.0" />
          </font></TextField>
-    <Button fx:id="getData" layoutX="179.0" layoutY="684.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="145.0" text="Проверить слово">
+    <Button fx:id="getData" layoutX="178.0" layoutY="703.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="145.0" text="Проверить слово">
         <font>
             <Font size="15.0" />
         </font>
     </Button>
+      <TextField fx:id="t61" layoutX="75.0" layoutY="529.0" prefHeight="70.0" prefWidth="70.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="t62" layoutX="145.0" layoutY="529.0" prefHeight="70.0" prefWidth="70.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="t63" layoutX="215.0" layoutY="529.0" prefHeight="70.0" prefWidth="70.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="t64" layoutX="285.0" layoutY="529.0" prefHeight="70.0" prefWidth="70.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="t65" layoutX="355.0" layoutY="529.0" prefHeight="70.0" prefWidth="70.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </TextField>
     <fx:define>
         <ArrayList fx:id="textfield1">
             <fx:reference source="t11" />
@@ -167,6 +192,13 @@
             <fx:reference source="t53" />
             <fx:reference source="t54" />
             <fx:reference source="t55" />
+        </ArrayList>
+        <ArrayList fx:id="textfield6">
+            <fx:reference source="t61" />
+            <fx:reference source="t62" />
+            <fx:reference source="t63" />
+            <fx:reference source="t64" />
+            <fx:reference source="t65" />
         </ArrayList>
     </fx:define>
 </children>

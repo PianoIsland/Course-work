@@ -1,11 +1,9 @@
 package com.example.demo5;
 
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 
 import java.io.*;
@@ -32,6 +30,9 @@ public class HelloController {
 
     @FXML
     private List<TextField> textfield5;
+
+    @FXML
+    private List<TextField> textfield6;
 
     @FXML
     private Button getData;
@@ -125,7 +126,7 @@ public class HelloController {
         CellValues.add(textfield3);
         CellValues.add(textfield4);
         CellValues.add(textfield5);
-        TranslateTransition translate = new TranslateTransition();
+        CellValues.add(textfield6);
 
         AtomicReference<String> prefinalWordle = new AtomicReference<>("");
 
@@ -137,7 +138,7 @@ public class HelloController {
         getData.setOnAction(event -> {
             word.setPromptText("Введите слово");
             if (ClearAllCells.get()){
-                for (int k = 0; k < 5; k++) {
+                for (int k = 0; k < 6; k++) {
                     for (TextField text : CellValues.get(j.get())) {
                         text.clear();
                         text.setStyle("");
@@ -189,7 +190,6 @@ public class HelloController {
                 GenerateNewWord.set(false);
             }
             final String finalWordle = prefinalWordle.get();
-            System.out.println(finalWordle);
             for (TextField text : CellValues.get(DidYouGuessTheWord.get())) {
                 if (guess.length() != 5) {
                     info.setText("Должно быть 5 букв!");
@@ -204,10 +204,10 @@ public class HelloController {
                 text.setText(String.valueOf(guess.charAt(count)));
                 if (guess.charAt(count) == finalWordle.charAt(count)) {
                     text.setStyle("-fx-background-color:#ADFF2F; -fx-border-color:#ADFF2F;");
+
                 }
                 if (guess.charAt(count) != finalWordle.charAt(count)) {
                     text.setStyle("-fx-background-color:#FFD700; -fx-border-color:#FFD700;");
-
                 }
                 if (finalWordle.indexOf(guess.charAt(count)) == -1) {
                     text.setStyle("-fx-background-color:#D3D3D3; -fx-border-color:#D3D3D3;");
@@ -224,7 +224,7 @@ public class HelloController {
                 GenerateNewWord.set(true);
                 ClearAllCells.set(true);
             }
-            if (DidYouGuessTheWord.get() == 5) {
+            if (DidYouGuessTheWord.get() == 6) {
                 if (!guess.equals(finalWordle)){
                     info.setText("Вы проиграли!");
                     word.setPromptText("Правильное слово: " + finalWordle);
